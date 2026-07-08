@@ -1,0 +1,253 @@
+* { box-sizing: border-box; }
+
+:root {
+  --bg: #F7F1E8;
+  --card-bg: #fff;
+  --card-border: #E3D7C2;
+  --text: #2A241C;
+  --text-muted: #8A7F6B;
+  --btn-carte-bg: #C1272D;
+  --btn-carte-text: #F7F1E8;
+  --search-bg: #fff;
+  --tag-gratuit-bg: #F0EAD8;
+  --tag-gratuit-text: #2A241C;
+  --tag-payant-bg: #FBEEE4;
+  --tag-payant-text: #8A4A1D;
+  --tag-payant-border: #F0D8C2;
+}
+
+[data-theme="dark"] {
+  --bg: #161B22;
+  --card-bg: #1F2733;
+  --card-border: #2E3947;
+  --text: #EDEBE6;
+  --text-muted: #8A94A3;
+  --btn-carte-bg: #FF6B4A;
+  --btn-carte-text: #161B22;
+  --search-bg: #1F2733;
+  --tag-gratuit-bg: #2A3441;
+  --tag-gratuit-text: #EDEBE6;
+  --tag-payant-bg: #3A2E17;
+  --tag-payant-text: #E0BC72;
+  --tag-payant-border: #4E3E20;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 1.5rem;
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #3B5578;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.logo-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  color: var(--text);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-carte {
+  background: var(--btn-carte-bg);
+  border: none;
+  color: var(--btn-carte-text);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-theme {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-size: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.search-wrap {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 9px 12px 9px 34px;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+  background: var(--search-bg);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.search-wrap input:focus {
+  outline: 2px solid var(--btn-carte-bg);
+  outline-offset: 1px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.count {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+
+.card-image {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+  background: var(--card-border);
+}
+
+.card-body {
+  padding: 14px;
+}
+
+.card-tag-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.concert-color { color: #6E8BB8; }
+.expo-color { color: #B6902C; }
+.atelier-color { color: #3E9270; }
+.spectacle-color { color: #B5504F; }
+
+.card-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  color: var(--text);
+  margin: 2px 0 10px;
+}
+
+.btn-voir-plus {
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.btn-voir-plus.concert { background: color-mix(in srgb, #6E8BB8 20%, var(--card-bg)); color: #6E8BB8; }
+.btn-voir-plus.expo { background: color-mix(in srgb, #B6902C 20%, var(--card-bg)); color: #B6902C; }
+.btn-voir-plus.atelier { background: color-mix(in srgb, #3E9270 20%, var(--card-bg)); color: #3E9270; }
+.btn-voir-plus.spectacle { background: color-mix(in srgb, #B5504F 20%, var(--card-bg)); color: #B5504F; }
+
+.card-details {
+  border-top: 1px dashed var(--card-border);
+  padding-top: 8px;
+}
+
+.card-details p {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.tag {
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.tag.gratuit {
+  color: var(--tag-gratuit-text);
+  background: var(--tag-gratuit-bg);
+  border: 1px solid var(--card-border);
+}
+
+.tag.payant {
+  color: var(--tag-payant-text);
+  background: var(--tag-payant-bg);
+  border: 1px solid var(--tag-payant-border);
+}
+
+.btn-voir-plus-global {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
