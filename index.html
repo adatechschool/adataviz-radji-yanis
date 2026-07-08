@@ -7,85 +7,93 @@
 </head>
 <body>
 
-<div class="app">
+<main class="app">
 
-  <div class="header">
-    <div class="logo">
-      <div class="logo-icon">🎭</div>
-      <span class="logo-title"> L'agenda Parisien </span>
-    </div>
-    <div class="header-actions">
+  <header class="header">
+    <hgroup class="logo">
+      <i class="logo-icon" aria-hidden="true">🎭</i>
+      <h1 class="logo-title">L'agenda Parisien</h1>
+    </hgroup>
+    <nav class="header-actions">
       <button class="btn-theme" id="theme-toggle">🌙</button>
       <button class="btn-carte">Carte</button>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="search-wrap">
-    <span class="search-icon">🔍</span>
+  <search class="search-wrap">
+    <i class="search-icon" aria-hidden="true">🔍</i>
     <input type="text" placeholder="rechercher">
-  </div>
+  </search>
 
-  <p class="count"> 2719 evenements trouves </p>
+  <p class="count">2719 evenements trouves</p>
 
-  <div class="grid">
+  <ul class="grid">
 
-    <div class="card">
-      <img class="card-image" src="{{cover_url}}" alt="">
-      <div class="card-body">
-        <span class="card-tag-eyebrow concert-color">concert</span>
-        <p class="card-title">Concert de jazz au CENTQUATRE</p>
-        <button class="btn-voir-plus concert">voir plus</button>
-        <div class="card-details">
-          <p>5 Rue Curial, 75019</p>
-          <span class="tag gratuit">gratuit</span>
-        </div>
-      </div>
-    </div>
+    <li>
+      <article class="card">
+        <img class="card-image" src="{{cover_url}}" alt="">
+        <section class="card-body">
+          <b class="card-tag-eyebrow concert-color">concert</b>
+          <h2 class="card-title">Concert de jazz au CENTQUATRE</h2>
+          <button class="btn-voir-plus concert">voir plus</button>
+          <footer class="card-details">
+            <address>5 Rue Curial, 75019</address>
+            <b class="tag gratuit">gratuit</b>
+          </footer>
+        </section>
+      </article>
+    </li>
 
-    <div class="card">
-      <img class="card-image" src="{{cover_url}}" alt="">
-      <div class="card-body">
-        <span class="card-tag-eyebrow expo-color">exposition</span>
-        <p class="card-title">Exposition photo a la Gaite Lyrique</p>
-        <button class="btn-voir-plus expo">voir plus</button>
-        <div class="card-details">
-          <p>3 bis Rue Papin, 75003</p>
-          <span class="tag payant">payant</span>
-        </div>
-      </div>
-    </div>
+    <li>
+      <article class="card">
+        <img class="card-image" src="{{cover_url}}" alt="">
+        <section class="card-body">
+          <b class="card-tag-eyebrow expo-color">exposition</b>
+          <h2 class="card-title">Exposition photo a la Gaite Lyrique</h2>
+          <button class="btn-voir-plus expo">voir plus</button>
+          <footer class="card-details">
+            <address>3 bis Rue Papin, 75003</address>
+            <b class="tag payant">payant</b>
+          </footer>
+        </section>
+      </article>
+    </li>
 
-    <div class="card">
-      <img class="card-image" src="{{cover_url}}" alt="">
-      <div class="card-body">
-        <span class="card-tag-eyebrow atelier-color">atelier</span>
-        <p class="card-title">Atelier creatif pour enfants</p>
-        <button class="btn-voir-plus atelier">voir plus</button>
-        <div class="card-details">
-          <p>Carreau du Temple, 75003</p>
-          <span class="tag gratuit">gratuit</span>
-        </div>
-      </div>
-    </div>
+    <li>
+      <article class="card">
+        <img class="card-image" src="{{cover_url}}" alt="">
+        <section class="card-body">
+          <b class="card-tag-eyebrow atelier-color">atelier</b>
+          <h2 class="card-title">Atelier creatif pour enfants</h2>
+          <button class="btn-voir-plus atelier">voir plus</button>
+          <footer class="card-details">
+            <address>Carreau du Temple, 75003</address>
+            <b class="tag gratuit">gratuit</b>
+          </footer>
+        </section>
+      </article>
+    </li>
 
-    <div class="card">
-      <img class="card-image" src="{{cover_url}}" alt="">
-      <div class="card-body">
-        <span class="card-tag-eyebrow spectacle-color">spectacle</span>
-        <p class="card-title">Spectacle de rue place de la Bastille</p>
-        <button class="btn-voir-plus spectacle">voir plus</button>
-        <div class="card-details">
-          <p>Place de la Bastille, 75011</p>
-          <span class="tag gratuit">gratuit</span>
-        </div>
-      </div>
-    </div>
+    <li>
+      <article class="card">
+        <img class="card-image" src="{{cover_url}}" alt="">
+        <section class="card-body">
+          <b class="card-tag-eyebrow spectacle-color">spectacle</b>
+          <h2 class="card-title">Spectacle de rue place de la Bastille</h2>
+          <button class="btn-voir-plus spectacle">voir plus</button>
+          <footer class="card-details">
+            <address>Place de la Bastille, 75011</address>
+            <b class="tag gratuit">gratuit</b>
+          </footer>
+        </section>
+      </article>
+    </li>
 
-  </div>
+  </ul>
 
   <button class="btn-voir-plus-global">voir plus</button>
 
-</div>
+</main>
 
 <script>
   const toggleBtn = document.getElementById('theme-toggle');
