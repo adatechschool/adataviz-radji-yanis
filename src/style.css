@@ -269,3 +269,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
+
+.cachee {
+  display: none;
+}

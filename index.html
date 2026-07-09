@@ -10,13 +10,13 @@
 <main class="app">
 
   <header class="header">
-    <hgroup class="logo">
+    <section class="logo">
       <i class="logo-icon" aria-hidden="true">🎭</i>
       <h1 class="logo-title">L'agenda Parisien</h1>
-    </hgroup>
+    </section>
     <nav class="header-actions">
       <button class="btn-theme" id="theme-toggle">🌙</button>
-      <button class="btn-carte">Carte</button>
+      <!-- <button class="btn-carte">Carte</button> -->
     </nav>
   </header>
 
@@ -25,99 +25,76 @@
     <input type="text" placeholder="rechercher">
   </search>
 
-  <p class="count">2719 evenements trouves</p>
+  <p class="count"></p>
 
-  <ul class="grid">
+  <div class="grid">
 
-    <li>
+    
       <article class="card">
         <img class="card-image" src="{{cover_url}}" alt="">
         <section class="card-body">
-          <b class="card-tag-eyebrow concert-color">concert</b>
-          <h2 class="card-title">Concert de jazz au CENTQUATRE</h2>
-          <button class="btn-voir-plus concert">voir plus</button>
+          <b class="card-tag-eyebrow concert-color"> </b>
+          <h2 class="card-title"></h2>
+          <button class="btn-voir-plus concert"> voir plus </button>
           <footer class="card-details">
-            <address>5 Rue Curial, 75019</address>
-            <b class="tag gratuit">gratuit</b>
+            <address></address>
+            <b class="tag gratuit"></b>
           </footer>
         </section>
       </article>
-    </li>
+    
 
-    <li>
+    
       <article class="card">
         <img class="card-image" src="{{cover_url}}" alt="">
         <section class="card-body">
-          <b class="card-tag-eyebrow expo-color">exposition</b>
-          <h2 class="card-title">Exposition photo a la Gaite Lyrique</h2>
-          <button class="btn-voir-plus expo">voir plus</button>
+          <b class="card-tag-eyebrow expo-color"></b>
+          <h2 class="card-title"></h2>
+          <button class="btn-voir-plus expo"> voir plus </button>
           <footer class="card-details">
-            <address>3 bis Rue Papin, 75003</address>
-            <b class="tag payant">payant</b>
+            <address></address>
+            <b class="tag payant"></b>
           </footer>
         </section>
       </article>
-    </li>
+    
 
-    <li>
+    
       <article class="card">
         <img class="card-image" src="{{cover_url}}" alt="">
         <section class="card-body">
-          <b class="card-tag-eyebrow atelier-color">atelier</b>
-          <h2 class="card-title">Atelier creatif pour enfants</h2>
-          <button class="btn-voir-plus atelier">voir plus</button>
+          <b class="card-tag-eyebrow atelier-color"></b>
+          <h2 class="card-title"></h2>
+          <button class="btn-voir-plus atelier"> voir plus </button>
           <footer class="card-details">
-            <address>Carreau du Temple, 75003</address>
-            <b class="tag gratuit">gratuit</b>
+            <address></address>
+            <b class="tag gratuit"></b>
           </footer>
         </section>
       </article>
-    </li>
+    
 
-    <li>
+    
       <article class="card">
         <img class="card-image" src="{{cover_url}}" alt="">
         <section class="card-body">
-          <b class="card-tag-eyebrow spectacle-color">spectacle</b>
-          <h2 class="card-title">Spectacle de rue place de la Bastille</h2>
-          <button class="btn-voir-plus spectacle">voir plus</button>
+          <b class="card-tag-eyebrow spectacle-color"></b>
+          <h2 class="card-title"></h2>
+          <button class="btn-voir-plus spectacle"> voir plus </button>
           <footer class="card-details">
-            <address>Place de la Bastille, 75011</address>
-            <b class="tag gratuit">gratuit</b>
+            <address></address>
+            <b class="tag gratuit"></b>
           </footer>
         </section>
       </article>
-    </li>
-
-  </ul>
+ </div>
 
   <button class="btn-voir-plus-global">voir plus</button>
 
 </main>
+<div id="app"></div>
 
-<script>
-  const toggleBtn = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark') {
-    root.setAttribute('data-theme', 'dark');
-    toggleBtn.textContent = '☀️';
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      root.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-      toggleBtn.textContent = '🌙';
-    } else {
-      root.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-      toggleBtn.textContent = '☀️';
-    }
-  });
-</script>
+<script type="module" src="src/main.js"></script>
 
 </body>
 </html>
