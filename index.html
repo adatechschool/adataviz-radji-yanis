@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<main class="app">
+<main >
 
   <header class="header">
     <section class="logo">
@@ -16,14 +16,29 @@
     </section>
     <nav class="header-actions">
       <button class="btn-theme" id="theme-toggle">🌙</button>
-      <!-- <button class="btn-carte">Carte</button> -->
     </nav>
   </header>
 
   <search class="search-wrap">
     <i class="search-icon" aria-hidden="true">🔍</i>
-    <input type="text" placeholder="rechercher">
+    <input type="text" id="recherche" placeholder="rechercher">
   </search>
+<section class="filters">
+  <label>
+  <input type="checkbox" value="gratuit">
+  Gratuit
+</label>
+<label>
+  <input type="checkbox" value="gratuit sous condition">
+  Gratuit Sous Condition
+</label>
+<label>
+  <input type="checkbox" value="payant">
+  Payant
+</label>
+
+</section>
+  
 
   <p class="count"></p>
 

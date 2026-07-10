@@ -85,17 +85,6 @@ body {
   gap: 8px;
 }
 
-.btn-carte {
-  background: var(--btn-carte-bg);
-  border: none;
-  color: var(--btn-carte-text);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 8px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
 .btn-theme {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -151,10 +140,6 @@ body {
   padding: 0;
 }
 
-.grid > li {
-  margin: 0;
-}
-
 @media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }
 }
@@ -185,11 +170,6 @@ body {
   text-transform: uppercase;
 }
 
-.concert-color { color: #6E8BB8; }
-.theatre-color { color: #B5504F; }
-.atelier-color { color: #3E9270; }
-.danse-color { color: #B6902C; }
-
 .card-title {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 15px;
@@ -215,12 +195,9 @@ body {
   border-radius: 20px;
   margin-bottom: 10px;
   cursor: pointer;
+  background: var(--tag-gratuit-bg);
+  color: var(--text);
 }
-
-.btn-voir-plus.concert { background: color-mix(in srgb, #6E8BB8 20%, var(--card-bg)); color: #6E8BB8; }
-.btn-voir-plus.theatre { background: color-mix(in srgb, #B5504F 20%, var(--card-bg)); color: #B5504F; }
-.btn-voir-plus.atelier { background: color-mix(in srgb, #3E9270 20%, var(--card-bg)); color: #3E9270; }
-.btn-voir-plus.danse { background: color-mix(in srgb, #B6902C 20%, var(--card-bg)); color: #B6902C; }
 
 .card-details {
   border-top: 1px dashed var(--card-border);
@@ -271,5 +248,9 @@ body {
 }
 
 .cachee {
+  display: none;
+}
+
+.carte-cachee {
   display: none;
 }
