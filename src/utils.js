@@ -13,5 +13,8 @@ export const estCarteCachee = (index) => {
   return index >= 50;
 };
 
+
+export const nombreEvents = (tableau) => 
+{ return tableau.length };
     
  

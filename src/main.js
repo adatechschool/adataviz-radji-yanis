@@ -1,5 +1,4 @@
-import { comparerTexte, estCarteCachee } from "./utils.js";
-
+import { comparerTexte, estCarteCachee, nombreEvents } from "./utils.js";
 
 const données = async () => {
   try {
@@ -15,9 +14,15 @@ const données = async () => {
 
 const grid = document.querySelector(".grid");
 
+   // Affichage des Données
+
 const lireData = async () => {
   const resultData = await données();
   const evenements = resultData.results;
+
+const compteur = document.querySelector(".count")
+compteur.textContent = `${nombreEvents(evenements)} événements trouvés`;
+
   grid.innerHTML = "";
 
   for (let i = 0; i < evenements.length; i++) {
@@ -26,8 +31,8 @@ const lireData = async () => {
     article.className = "card";
 
     if (estCarteCachee(i)) {
-  article.classList.add("carte-cachee");
-}
+      article.classList.add("carte-cachee");
+    }
 
     const img = document.createElement("img");
     img.className = "card-image";
@@ -67,11 +72,14 @@ const lireData = async () => {
     section.appendChild(button);
     footer.appendChild(p);
 
+    // Voir plus par carte
+      
     button.addEventListener("click", () => {
       footer.classList.toggle("cachee");
     });
   }
 };
+    //Voir plus global
 
 const boutonVoirPlusGlobal = document.querySelector(".btn-voir-plus-global");
 boutonVoirPlusGlobal.addEventListener("click", () => {
@@ -80,6 +88,8 @@ boutonVoirPlusGlobal.addEventListener("click", () => {
     carte.classList.remove("carte-cachee");
   });
 });
+
+//SearchBarre
 
 const recherche = document.querySelector("#recherche");
 recherche.addEventListener("input", () => {
@@ -96,4 +106,78 @@ recherche.addEventListener("input", () => {
   });
 });
 
+  // Filters
+
+const caseACocher = document.querySelectorAll(".filtres input");
+caseACocher.forEach((uneCase) => {
+  uneCase.addEventListener("change", () => {
+    const valeursCochees = [];
+
+    for (let i = 0; i < caseACocher.length; i++) {
+      if (caseACocher[i].checked === true) {
+        valeursCochees.push(caseACocher[i].value);
+      }
+    }
+
+    const cartes = document.querySelectorAll(".card");
+    cartes.forEach((carte) => {
+      const tarif = carte.querySelector(".tag").textContent;
+      if (valeursCochees.length === 0 || valeursCochees.includes(tarif)) {
+        carte.classList.remove("carte-cachee");
+      } else {
+        carte.classList.add("carte-cachee");
+      }
+    });
+  });
+
+     // methodes avec .filter
+
+// const caseACocher = document.querySelectorAll(".filtres input");
+// caseACocher.forEach((uneCase) => {
+//   uneCase.addEventListener("change", () => {
+//     const valeursCochees = [];
+
+//     for (let i = 0; i < caseACocher.length; i++) {
+//       if (caseACocher[i].checked === true) {
+//         valeursCochees.push(caseACocher[i].value);
+//       }
+//     }
+
+//     const evenementsFiltres = tousLesEvenements.filter((events) => {
+//       return valeursCochees.length === 0 || valeursCochees.includes(events.price_type);
+//     });
+
+//     grid.innerHTML = "";
+//     evenementsFiltres.forEach((events, index) => {
+//       creerCarte(events, index);
+//     });
+//   });
+// });
+
+
+});
+
 lireData();
+
+// Mode Sombre/Clair
+const toggleBtn = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+const saved = localStorage.getItem('theme');
+if (saved === 'dark') {
+  root.setAttribute('data-theme', 'dark');
+  toggleBtn.textContent = '☀️';
+}
+
+toggleBtn.addEventListener('click', () => {
+  const isDark = root.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    root.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+    toggleBtn.textContent = '🌙';
+  } else {
+    root.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    toggleBtn.textContent = '☀️';
+  }
+});

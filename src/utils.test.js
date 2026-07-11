@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { comparerTexte , estCarteCachee } from "./utils.js";
+import { comparerTexte , estCarteCachee, nombreEvents } from "./utils.js";
 
 describe("comparerTexte", () => {
     it("doit comparer le texte de la search barre et le titre de chaque carte",()=>{
@@ -19,3 +19,13 @@ describe("estCarteCachee", () => {
 
     })
 })    
+
+describe("nombreEvents", () => {
+  it("doit renvoyer le nombre d'éléments du tableau", () => {
+    expect(nombreEvents([1, 2, 3])).toEqual(3);
+  });
+
+  it("doit renvoyer 0 pour un tableau vide", () => {
+    expect(nombreEvents([])).toEqual(0);
+  });
+});
