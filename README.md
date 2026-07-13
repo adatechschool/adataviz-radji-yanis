@@ -1,1 +1,23 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jPQQNwkm)
+# L'Agenda Parisien 🗓️
+
+Petite appli JavaScript qui affiche les événements culturels à Paris, à partir de l'Open Data de la Ville de Paris.
+
+## Fonctionnalités
+
+- Recherche d'événements
+- Pagination
+- Filtre par prix
+- Thème clair / sombre
+
+## Utilisation
+
+Ouvrir `index.html` dans un navigateur.
+
+## Tests
+
+```bash
+npx vitest
+```
+
+
+

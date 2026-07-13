@@ -130,7 +130,7 @@ caseACocher.forEach((uneCase) => {
     });
   });
 
-     // methodes avec .filter
+//      methodes avec .filter
 
 // const caseACocher = document.querySelectorAll(".filtres input");
 // caseACocher.forEach((uneCase) => {
